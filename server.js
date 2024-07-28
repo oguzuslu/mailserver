@@ -21,23 +21,23 @@ app.get('/en', (req, res) => {
 })
 
 app.post('/send-email', (req, res) => {
-    console.log("send mail isteğine geldim.");
+    console.log("send mail request.");
     const transporter = nodemailer.createTransport({
         service: 'gmail',
 
         auth: {
-            user: "spinigoo@gmail.com",
-            pass: "vdqhiijbvofjtswl"
+            user: "",//company email address
+            pass: ""//company email pass
         }
 
-        // service: 'gmail',//mail.eralpsoftware.com
+        // service: 'gmail',//company mail server address
         // //pool: true,
         // port: 587,
         // secure: false, // upgrade later with STARTTLS
         // //secure: true,
         // auth: {
-        //     user: "spinigoo@gmail.com",
-        //     pass: "EralpTeam123",
+        //     user: "userMail",
+        //     pass: "userPass",
         // },
         // tls: {
         //     // do not fail on invalid certs
@@ -49,7 +49,7 @@ app.post('/send-email', (req, res) => {
         // console.log('registerr');
         const mailOptions = {
             from: req.body.email,
-            to: 'spinigoo@gmail.com',
+            to: '',//company email address
             subject: `Registration: ${req.body.subject}`,
             text: `Name :${req.body.namee} \r\nMail :${req.body.email} \r\nPhone Number : ${req.body.phone} \r\nCompany Name : ${req.body.companyname} \r\nMessage : ${req.body.message}`
         }
@@ -68,7 +68,7 @@ app.post('/send-email', (req, res) => {
         // console.log('standart');
         const mailOptions = {
             from: req.body.email,
-            to: 'spinigoo@gmail.com',
+            to: '',//company email address
             subject: `Standard: ${req.body.subject}`,
             text: `Name :${req.body.namee} \r\nMail :${req.body.email} \r\nMessage : ${req.body.message}`
         }
