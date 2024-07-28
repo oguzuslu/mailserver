@@ -2,7 +2,7 @@
 copyCode()
 document.getElementById('vid').play();
 function copyCode() {
-    console.log('girddiii');
+    console.log('enterence');
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
     });
